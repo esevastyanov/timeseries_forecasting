@@ -1,9 +1,8 @@
 package arima
 
 import (
+	"log"
 	"strconv"
-
-	"github.com/DoOR-Team/goutils/log"
 )
 
 func ForeCastARIMA(data []float64, forecastSize int, params Config) *Result {
@@ -31,7 +30,7 @@ func ForeCastARIMA(data []float64, forecastSize int, params Config) *Result {
 	forecastResult.SetSigma2AndPredicationInterval(fittedModel.GetParams())
 
 	// add logging messages
-	log.Debug("{" +
+	log.Println("{" +
 		"\"Best ModelInterface Param\" : \"" + fittedModel.GetParams().String() + "\"," +
 		"\"Forecast Size\" : \"" + strconv.FormatInt(int64(forecastSize), 10) + "\"," +
 		"\"Input Size\" : \"" + strconv.FormatInt(int64(len(data)), 10) + "\"" +

@@ -3,11 +3,10 @@ package arima
 import (
 	"bytes"
 	"fmt"
+	"log"
 	"math"
 	"strconv"
 	"testing"
-
-	"github.com/DoOR-Team/goutils/log"
 )
 
 func TestArima(t *testing.T) {
@@ -27,11 +26,11 @@ func TestArima(t *testing.T) {
 	forecast := forecastResult.GetForecast()
 	upper := forecastResult.GetForecastUpperConf()
 	lower := forecastResult.GetForecastLowerConf()
-	log.Debug(forecast)
-	log.Debug(upper)
-	log.Debug(lower)
+	log.Println(forecast)
+	log.Println(upper)
+	log.Println(lower)
 
-	// log.Debug("rmse: ", commonTestCalculateRMSE("test", dataArray, trueForecast, forecastSize, p, d, q, P, D, Q, m))
+	// log.Println("rmse: ", commonTestCalculateRMSE("test", dataArray, trueForecast, forecastSize, p, d, q, P, D, Q, m))
 
 }
 
@@ -98,6 +97,6 @@ func commonTestCalculateRMSE(name string, trainingData []float64, trueForecastDa
 	sb.WriteString("RMSE = ")
 	sb.WriteString(dbl2str(rmse))
 	sb.WriteString("\n\n")
-	log.Debug(sb.String())
+	fmt.Println(sb.String())
 	return rmse
 }

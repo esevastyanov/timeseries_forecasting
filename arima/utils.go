@@ -3,7 +3,7 @@ package arima
 import (
 	"math"
 
-	"github.com/DoOR-Team/timeseries_forecasting/arima/matrix"
+	"timeseries_forecasting/arima/matrix"
 )
 
 const testSetPercentage = 0.15

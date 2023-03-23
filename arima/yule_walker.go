@@ -1,18 +1,17 @@
 package arima
 
 import (
+	"log"
 	"math"
 
-	"github.com/DoOR-Team/goutils/log"
-	"github.com/DoOR-Team/timeseries_forecasting/arima/matrix"
+	"timeseries_forecasting/arima/matrix"
 )
 
 func Fit(data []float64, p int) []float64 {
 
 	length := len(data)
 	if length == 0 || p < 1 {
-		log.Fatalf(
-			"fitYuleWalker - Invalid Parameters length= %d, p ", length, p)
+		log.Fatalf("fitYuleWalker - Invalid Parameters length = %d, p = %d", length, p)
 	}
 
 	r := make([]float64, p+1)

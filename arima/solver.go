@@ -1,11 +1,11 @@
 package arima
 
 import (
+	"log"
 	"math"
 
-	"github.com/DoOR-Team/goutils/log"
-	mtx "github.com/DoOR-Team/timeseries_forecasting/arima/matrix"
-	"github.com/DoOR-Team/timeseries_forecasting/arima/utils"
+	mtx "timeseries_forecasting/arima/matrix"
+	"timeseries_forecasting/arima/utils"
 )
 
 const maxIterationForHannanRissanen = 5
@@ -250,7 +250,7 @@ func estimateARMA(data_orig []float64, params *Config,
 	length := total_length - forecast_length
 	size := length - r
 	if length < (2 * r) {
-		log.Fatalf("not enough data points: length= %d, r=", length, r)
+		log.Fatalf("not enough data points: length = %d, r = %d", length, r)
 	}
 
 	// step 1: apply Yule-Walker method and estimate AR(r) model on input data

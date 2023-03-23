@@ -2,8 +2,7 @@ package arima
 
 import (
 	"fmt"
-
-	"github.com/DoOR-Team/goutils/log"
+	"log"
 )
 
 type BackShift struct {

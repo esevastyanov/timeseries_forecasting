@@ -3,8 +3,8 @@ package arima
 import (
 	"fmt"
 
-	"github.com/DoOR-Team/timeseries_forecasting/arima/matrix"
-	"github.com/DoOR-Team/timeseries_forecasting/arima/utils"
+	"timeseries_forecasting/arima/matrix"
+	"timeseries_forecasting/arima/utils"
 )
 
 type Config struct {
